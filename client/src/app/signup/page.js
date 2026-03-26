@@ -20,28 +20,24 @@ function SignupForm() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [avatarData, setAvatarData] = useState('');
+  const [avatarFile, setAvatarFile] = useState(null);
   const [avatarName, setAvatarName] = useState('');
   const [done, setDone] = useState(false);
 
   const handleAvatar = (file) => {
     if (!file) {
-      setAvatarData('');
+      setAvatarFile(null);
       setAvatarName('');
       return;
     }
+    setAvatarFile(file);
     setAvatarName(file.name);
-    const reader = new FileReader();
-    reader.onload = () => {
-      setAvatarData(reader.result || '');
-    };
-    reader.readAsDataURL(file);
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
     const signupResult = await dispatch(
-      signupUser({ firstName, lastName, username, email, password, avatar: avatarData })
+      signupUser({ firstName, lastName, username, email, password, avatar: avatarFile })
     );
     if (signupResult.error) {
       setDone(false);

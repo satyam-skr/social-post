@@ -159,14 +159,19 @@ export const authAPI = {
   },
 
   // Register
-  register: async ({ firstName, lastName, username, email, password, avatar }) => {
+  register: async ({ firstName, lastName, username, email, password, avatar } = {}) => {
+    const form = new FormData();
+    if (firstName) form.append('firstName', firstName);
+    if (typeof lastName === 'string') form.append('lastName', lastName);
+    if (username) form.append('username', username);
+    if (email) form.append('email', email);
+    if (password) form.append('password', password);
+    if (avatar) form.append('avatar', avatar);
+
     const response = await fetch(`${API_BASE_URL}/api/user/signup`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
       credentials: 'include',
-      body: JSON.stringify({ firstName, lastName, username, email, password, avatar }),
+      body: form,
     });
     return jsonOrThrow(response, 'Signup failed');
   },

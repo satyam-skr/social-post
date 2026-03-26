@@ -3,6 +3,7 @@ import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.model.js";
 import { Post } from "../models/post.model.js";
 import { asyncHandler } from '../utils/asyncHandler.js';
+import { uploadOnCloudinary } from "../utils/cloudinary.js";
 
 function isValidEmail(email) {
     if (typeof email !== 'string') {
@@ -42,12 +43,22 @@ const signupUser = asyncHandler(async (req, res) => {
         throw new ApiError(400, "user with this username or email already exists");
     }
 
+    let avatarUrl;
+    if (req.file?.path) {
+        const uploadResult = await uploadOnCloudinary(req.file.path, "avatars");
+        avatarUrl = uploadResult?.secure_url || uploadResult?.url;
+        if (!avatarUrl) {
+            throw new ApiError(500, "failed to upload avatar");
+        }
+    }
+
     const createdUser = await User.create({
         firstName,
         lastName,
         username,
         email,
-        password
+        password,
+        ...(avatarUrl ? { avatar: avatarUrl } : {})
     });
 
     if (!createdUser) {
