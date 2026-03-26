@@ -1,0 +1,306 @@
+.page {
+  --green: #5abf41;
+  --yellow: #ffd447;
+  --orange: #ff8e3c;
+  --blue: #2f80ed;
+  --white: #ffffff;
+  --ink: #14324a;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(90, 191, 65, 0.35), transparent 28%),
+    radial-gradient(circle at 92% 12%, rgba(47, 128, 237, 0.25), transparent 30%),
+    radial-gradient(circle at 24% 88%, rgba(255, 212, 71, 0.4), transparent 28%),
+    linear-gradient(145deg, #fffef8 0%, #ecf7ff 100%);
+  color: var(--ink);
+}
+
+.shell {
+  width: min(100%, 1200px);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(280px, 680px);
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 12px 84px;
+}
+
+.composerCard {
+  border-radius: 18px;
+  padding: 14px;
+  background: linear-gradient(120deg, #f8fff4 0%, #ffffff 35%, #fff8ef 100%);
+  border: 2px solid rgba(47, 128, 237, 0.3);
+  box-shadow: 0 8px 20px rgba(20, 50, 74, 0.08);
+}
+
+.composerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.composerHeader h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.composerHeader p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #4f7996;
+}
+
+.addBtn,
+.postBtn,
+.actionBtn,
+.navItem {
+  border: 0;
+  background: transparent;
+  font: inherit;
+}
+
+.addBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--yellow);
+  color: #4d3d00;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-weight: 700;
+}
+
+.composerInput {
+  width: 100%;
+  resize: vertical;
+  min-height: 94px;
+  margin-top: 12px;
+  border-radius: 12px;
+  border: 2px solid rgba(90, 191, 65, 0.3);
+  padding: 10px 12px;
+  background: var(--white);
+}
+
+.postBtn {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(90deg, var(--blue), #4da1ff);
+  color: white;
+  font-weight: 700;
+}
+
+.authHint {
+  margin: 8px 0 0;
+  color: #355a76;
+  font-size: 0.88rem;
+}
+
+.authHint a {
+  color: #1c67c8;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.feed {
+  min-height: 0;
+  max-height: calc(100vh - 260px);
+  overflow: auto;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.postCard {
+  background: var(--white);
+  border: 1px solid rgba(20, 50, 74, 0.1);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.postLayout {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 12px;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 142, 60, 0.5);
+  cursor: pointer;
+}
+
+.userLine {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.firstName {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.username {
+  color: #4f7996;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.postBody {
+  margin-top: 6px;
+}
+
+.postText {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.postImage {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 12px;
+  max-height: 280px;
+  object-fit: cover;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #f2f8ff;
+  color: #275072;
+  transition: transform 0.16s ease, background-color 0.16s ease, color 0.16s ease;
+}
+
+.likedBtn {
+  background: #ffe3ef;
+  color: #d81b60;
+  transform: scale(1.06);
+}
+
+.commentLink {
+  text-decoration: none;
+}
+
+.pagePlaceholder {
+  text-align: center;
+  padding: 14px;
+  color: #4f7996;
+}
+
+.bottomNav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 2px solid rgba(255, 142, 60, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.navItem {
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #2f4f68;
+  font-size: 0.8rem;
+}
+
+.navItemLink {
+  text-decoration: none;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.modalCard {
+  width: min(560px, 100%);
+  border-radius: 18px;
+  padding: 14px;
+  background: linear-gradient(120deg, #f8fff4 0%, #ffffff 35%, #fff8ef 100%);
+  border: 2px solid rgba(47, 128, 237, 0.3);
+  box-shadow: 0 8px 20px rgba(20, 50, 74, 0.12);
+  display: grid;
+  gap: 12px;
+}
+
+.modalCard h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.imagePickRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.imagePickLabel {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.imageList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.imageList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (min-width: 900px) {
+  .shell {
+    grid-template-columns: minmax(420px, 820px);
+    padding: 26px 24px 88px;
+  }
+
+  .composerCard,
+  .postCard {
+    border-radius: 20px;
+  }
+
+  .feed {
+    max-height: calc(100vh - 280px);
+  }
+}

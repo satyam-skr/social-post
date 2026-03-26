@@ -1,0 +1,116 @@
+.page {
+  --green: #5abf41;
+  --yellow: #ffd447;
+  --orange: #ff8e3c;
+  --blue: #2f80ed;
+  --white: #ffffff;
+  --ink: #14324a;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(90, 191, 65, 0.25), transparent 26%),
+    radial-gradient(circle at 82% 10%, rgba(47, 128, 237, 0.25), transparent 28%),
+    radial-gradient(circle at 30% 90%, rgba(255, 212, 71, 0.3), transparent 28%),
+    linear-gradient(135deg, #fdfdfb 0%, #eef7ff 100%);
+  color: var(--ink);
+}
+
+.card {
+  width: min(100%, 520px);
+  background: var(--white);
+  border-radius: 18px;
+  padding: 22px 20px;
+  box-shadow: 0 12px 28px rgba(20, 50, 74, 0.12);
+  border: 1px solid rgba(20, 50, 74, 0.08);
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 1.6rem;
+  color: var(--ink);
+}
+
+.subtitle {
+  margin: 0 0 18px;
+  color: #4f7996;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.input,
+.fileInput {
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid rgba(20, 50, 74, 0.08);
+  padding: 12px 12px;
+  font-size: 1rem;
+  background: #fdfdfd;
+}
+
+.fileInput {
+  padding: 10px 12px;
+}
+
+.button {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #4d2800;
+  background: linear-gradient(120deg, var(--orange), #ffb347);
+  box-shadow: 0 6px 14px rgba(255, 142, 60, 0.35);
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  color: #2f4f68;
+  font-weight: 600;
+}
+
+.links a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.note {
+  margin: 6px 0;
+  color: #355a76;
+}
+
+.error {
+  color: #c62828;
+  margin: 4px 0 0;
+}
+
+.success {
+  color: #2e7d32;
+  margin: 4px 0 0;
+}
+
+.avatarPreview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.previewImg {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 142, 60, 0.5);
+}

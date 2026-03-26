@@ -7,9 +7,9 @@ const postSchema = new Schema({
         min: 10,
         trim: true
     },
-    image: {
+    imageUrls: [{
         type: String, // url
-    },
+    }],
     likes: [{
         type: Schema.Types.ObjectId,
         ref: "User"
@@ -22,7 +22,7 @@ const postSchema = new Schema({
         type: Boolean,
         default: false
     },
-    parentComment: {
+    parentPostId: {
         type: Schema.Types.ObjectId,
         ref: "Post",
         default: null

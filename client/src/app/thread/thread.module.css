@@ -1,0 +1,137 @@
+.page {
+  --green: #5abf41;
+  --yellow: #ffd447;
+  --orange: #ff8e3c;
+  --blue: #2f80ed;
+  --white: #ffffff;
+  --ink: #14324a;
+
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(90, 191, 65, 0.25), transparent 28%),
+    radial-gradient(circle at 88% 14%, rgba(47, 128, 237, 0.23), transparent 30%),
+    radial-gradient(circle at 20% 88%, rgba(255, 212, 71, 0.3), transparent 28%),
+    linear-gradient(135deg, #fdfefc 0%, #eef6ff 100%);
+  padding: 28px 12px 60px;
+  color: var(--ink);
+}
+
+.shell {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 18px;
+  border: 1px solid rgba(20, 50, 74, 0.1);
+  box-shadow: 0 12px 24px rgba(20, 50, 74, 0.12);
+  padding: 16px;
+}
+
+.headerLine {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 142, 60, 0.5);
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+}
+
+.firstName {
+  font-weight: 800;
+}
+
+.username {
+  color: #4f7996;
+}
+
+.bodyText {
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+
+.image {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
+  max-height: 340px;
+  object-fit: cover;
+}
+
+.sectionTitle {
+  margin: 12px 0 8px;
+  font-weight: 800;
+  color: #1e3d55;
+}
+
+.commentList {
+  display: grid;
+  gap: 10px;
+}
+
+.commentCard {
+  border: 1px solid rgba(20, 50, 74, 0.08);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: #fdfdfd;
+  text-decoration: none;
+  color: inherit;
+}
+
+.commentActions {
+  margin-top: 10px;
+}
+
+.likeBtn {
+  border: 0;
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: #f2f8ff;
+  color: #275072;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.16s ease, background-color 0.16s ease, color 0.16s ease;
+}
+
+.likeBtnActive {
+  background: #ffe3ef;
+  color: #d81b60;
+  transform: scale(1.06);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f2f8ff;
+  color: #275072;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.backLink {
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.empty {
+  color: #4f7996;
+}

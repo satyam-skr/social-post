@@ -1,0 +1,250 @@
+.page {
+  --yellow: #ffd447;
+  --orange: #ff8e3c;
+  --pink: #ff8fb1;
+  --blue: #7cc6ff;
+  --white: #ffffff;
+  --ink: #17354a;
+
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(255, 212, 71, 0.42), transparent 28%),
+    radial-gradient(circle at 92% 12%, rgba(124, 198, 255, 0.3), transparent 30%),
+    radial-gradient(circle at 24% 86%, rgba(255, 143, 177, 0.28), transparent 28%),
+    linear-gradient(160deg, #fffdf7 0%, #fff7ec 45%, #f5fbff 100%);
+}
+
+.shell {
+  width: min(100%, 880px);
+  margin: 0 auto;
+  padding: 20px 14px 90px;
+  display: grid;
+  gap: 14px;
+}
+
+.profileCard {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 12px;
+  align-items: center;
+  background: linear-gradient(120deg, #fff7d1 0%, #fff4ea 45%, #ffe7f0 100%);
+  border: 2px solid rgba(255, 142, 60, 0.35);
+  border-radius: 20px;
+  padding: 14px;
+  box-shadow: 0 8px 22px rgba(23, 53, 74, 0.1);
+}
+
+.avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(124, 198, 255, 0.7);
+}
+
+.profileMeta h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.username {
+  margin: 4px 0 0;
+  color: #44647a;
+  font-size: 0.92rem;
+}
+
+.logoutBtn {
+  margin-top: 10px;
+  border: 1px solid rgba(23, 53, 74, 0.18);
+  background: #fff;
+  color: #17354a;
+  border-radius: 10px;
+  padding: 7px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logoutBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.logoutBtn:hover:not(:disabled) {
+  background: #fff6f2;
+}
+
+.activityCard {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(23, 53, 74, 0.12);
+  border-radius: 18px;
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.sectionHead h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.sectionHead p {
+  margin: 0;
+  color: #4c7087;
+  font-size: 0.9rem;
+}
+
+.activityList {
+  display: grid;
+  gap: 10px;
+}
+
+.activityItem {
+  border-radius: 14px;
+  border: 1px solid rgba(23, 53, 74, 0.1);
+  padding: 12px;
+  background: var(--white);
+}
+
+.badgeRow {
+  margin-bottom: 8px;
+}
+
+.postBadge,
+.commentBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.postBadge {
+  background: #fff4cf;
+  color: #6e4d00;
+}
+
+.commentBadge {
+  background: #ffe4ee;
+  color: #8f3659;
+}
+
+.parentLink {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: #1764c3;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.parentLink:hover {
+  text-decoration: underline;
+}
+
+.text {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.itemImage {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 280px;
+}
+
+.itemActions {
+  margin-top: 10px;
+}
+
+.likeBtn {
+  border: 0;
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: #f2f8ff;
+  color: #275072;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.16s ease, background-color 0.16s ease, color 0.16s ease;
+}
+
+.likeBtnActive {
+  background: #ffe3ef;
+  color: #d81b60;
+  transform: scale(1.06);
+}
+
+.placeholder,
+.error {
+  margin: 0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.placeholder {
+  background: #f6fbff;
+  color: #4c7087;
+}
+
+.error {
+  background: #fff0ec;
+  color: #9e4125;
+}
+
+.bottomNav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 2px solid rgba(255, 142, 60, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.navItem {
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #2f4f68;
+  font-size: 0.8rem;
+}
+
+.navItemLink {
+  text-decoration: none;
+}
+
+.redirectWrap {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 16px;
+}
+
+@media (min-width: 900px) {
+  .shell {
+    padding: 24px 24px 96px;
+  }
+
+  .profileCard {
+    grid-template-columns: 84px 1fr;
+    padding: 18px;
+  }
+
+  .avatar {
+    width: 84px;
+    height: 84px;
+  }
+}

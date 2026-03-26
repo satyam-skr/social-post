@@ -34,6 +34,11 @@ const userSchema = new Schema({
         type: String,
         required: [true, "Password is required"]
     },
+    avatar: {
+        type: String, //url of the avatar
+        default: "https://images.pexels.com/photos/4641440/pexels-photo-4641440.jpeg",
+        required:false
+    },
     refreshToken: {
         type: String
     }
