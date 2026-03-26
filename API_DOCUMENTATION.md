@@ -12,7 +12,7 @@ Current route prefixes from the app:
 - Post: `/api/post`
 
 Example full base URL:
-- `http://localhost:8000/api`
+- `http://localhost:4000/api`
 
 ## 2. Common Conventions
 
