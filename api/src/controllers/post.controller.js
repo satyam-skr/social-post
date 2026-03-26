@@ -200,7 +200,7 @@ const getFeed = asyncHandler(async (req, res) => {
     }
 
     const posts = await Post.find(filter)
-        .sort({ createdAt: -1 })
+        .sort({ createdAt: -1, _id: -1 })
         .skip((page - 1) * limit)
         .limit(limit)
         .populate("userId", "username firstName lastName avatar");
